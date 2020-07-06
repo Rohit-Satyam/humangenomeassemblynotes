@@ -1,5 +1,14 @@
 # humangenomeassemblynotes
 
+1. [Reference-guided  _de novo_  assembly approach improves genome reconstruction for related species](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1911-6#Sec2)
+2. [Human Genome Assembly in 100 Minutes](https://www.biorxiv.org/content/10.1101/705616v1.full)
+3. [Assemblathon 2: evaluating  _de novo_  methods of genome assembly in three vertebrate species](https://academic.oup.com/gigascience/article/2/1/2047-217X-2-10/2656129)
+4. [SAGE2: parallel human genome assembly](https://academic.oup.com/bioinformatics/article/34/4/678/4553153)
+5. [Bioinformatics DocumentationDe Novo Genome Assembly for Illumina Data](https://www.melbournebioinformatics.org.au/tutorials/tutorials/assembly/assembly-protocol/)
+6. [Assembly of chromosome-scale contigs by efficiently resolving repetitive sequences with long reads](https://www.nature.com/articles/s41467-019-13355-3)
+7. [LASER: Large genome ASsembly EvaluatoR](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4657217/)
+
+
 Aligning the reads using bowtie2
 
 If you align R1 and R2 on your reference, some read pairs will align respecting the inner distance and the relative orientation defined at library prep stage.
