@@ -6,11 +6,19 @@ If you align R1 and R2 on your reference, some read pairs will align respecting 
 
 In particular, for a standard paired-end library we expect R1 to be in forward direction and R2 in reverse, also a commonly used insert size is 500bp. So, any read pairs which fulfil these criteria after the alignment will be called as **concordant or properly aligned reads** (these are indication and mostly depends on the settings you used at alignment stage).
 
-If the distance between R1 and R2 is outside 500bp (+/- 1SD) or they relative orientation is not Forward/Reverse thy will be called as **discordant pairs.**
+If the distance between R1 and R2 is outside 500bp (+/- 1SD) or they relative orientation is not Forward/Reverse thy will be called as **discordant pairs.** The definition of discordant, at least the one I use, consider the distance and relative orientation of the read pairs. Now, the relative orientation of the read pairs depend on the library type. In the Illumina world, the library type are 2: paired-end library and mate-pair library.
+
+I would assume if it is not specified, a library is a paired-end. That means that R1 is oriented forward and R2 is oriented reverse.
+
+In a mate-pair library the orientation of the pairs is the opposite: R1 is reverse, and R2 is forward.
+
+You will appreciate that in the paired-end the reads are facing each other, not in the mate-pairs. Also, these libraries have insert sizes much longer than the paired end: in the range of kb, ie 1kb, 2kb, or longer in some cases.
+
+Usually, mate-pair library are used to identify structural variation in a sample. Therefore any pairs of a mate-paired library that are aligned as discordant are in fact support of a possible structural rearrangements of the sample compared to the reference. [Source]
 
 If R1 (or R2) alone are aligned, this will be a singleton.
 
-    bowtie2 --fast-local -p 1 -q -I -X -x -1 -2 -fr
+    bowtie2 --fast-local -p 1 -q -I -X -x -1 -2 -fr | samtools sort -o 
 
 ```
 -I/--minins <int>
