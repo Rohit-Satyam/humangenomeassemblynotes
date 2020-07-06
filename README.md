@@ -2,6 +2,14 @@
 
 Aligning the reads using bowtie2
 
+If you align R1 and R2 on your reference, some read pairs will align respecting the inner distance and the relative orientation defined at library prep stage.
+
+In particular, for a standard paired-end library we expect R1 to be in forward direction and R2 in reverse, also a commonly used insert size is 500bp. So, any read pairs which fulfil these criteria after the alignment will be called as **concordant or properly aligned reads** (these are indication and mostly depends on the settings you used at alignment stage).
+
+If the distance between R1 and R2 is outside 500bp (+/- 1SD) or they relative orientation is not Forward/Reverse thy will be called as **discordant pairs.**
+
+If R1 (or R2) alone are aligned, this will be a singleton.
+
     bowtie2 --fast-local -p 1 -q -I -X -x -1 -2 -fr
 
 ```
